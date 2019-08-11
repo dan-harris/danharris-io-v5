@@ -1,13 +1,16 @@
 <nav class="navbar navbar--shadow" aria-label="Main Navigation">
-  <ul class="navbar__main-nav">
-    <li class="navbar__main-nav__link__outer">
-      <a class="navbar__main-nav__link {{"active" if (base_route == "home")}}" href="/">home</a>
-    </li>
-    <li class="navbar__main-nav__link__outer">
-      <a class="navbar__main-nav__link {{"active" if (base_route == "blog")}}" href="/blog">blog</a>
-    </li>
-    <!-- <li class="navbar__main-nav__link__outer">
-      <a class="navbar__main-nav__link{{"active" if (base_route == "presentations")}}" href="/presentations">presentations</a>
-    </li> -->
-  </ul>
+  <div class="navbar__inner-wrapper">
+    <ul class="navbar__main-nav">
+      <li class="navbar__main-nav__link__outer">
+        <a class="navbar__main-nav__link {{"active" if (base_route == "home")}}" href="/">home</a>
+      </li>
+      <li class="navbar__main-nav__link__outer">
+        <a class="navbar__main-nav__link {{"active" if (base_route == "blog")}}" href="/blog">blog</a>
+      </li>
+      <!-- <li class="navbar__main-nav__link__outer">
+        <a class="navbar__main-nav__link{{"active" if (base_route == "presentations")}}" href="/presentations">presentations</a>
+      </li> -->
+    </ul>
+  </div>
 </nav>
+   

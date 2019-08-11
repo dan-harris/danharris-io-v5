@@ -1,0 +1,10 @@
+---
+layout: page-default
+---
+{% import "_card.njk" as card %}
+
+{% for post in collections.post %} 
+    {% if post.data.published %}
+    {{ card.create(post.url, "/blog-images/" + post.data.slug + ".png", post.data.title, post.date, post.data.tags ) }}
+    {% endif %} 
+{% endfor %}

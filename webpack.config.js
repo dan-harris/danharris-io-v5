@@ -133,8 +133,8 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({}),
     // html setup (minify for prod)
     new HtmlWebpackPlugin({
-      template: "./src/_layouts-base/portfolio.html",
-      filename: "portfolio.njk",
+      template: "./src/_layouts-page/page-default.html",
+      filename: "page-default.njk",
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,
@@ -144,8 +144,8 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: "./src/_layouts-base/blog.html",
-      filename: "blog.njk",
+      template: "./src/_layouts-page/page-portfolio.html",
+      filename: "page-portfolio.njk",
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,

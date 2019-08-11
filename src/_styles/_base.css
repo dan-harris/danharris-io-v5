@@ -11,8 +11,16 @@ body {
   font-size: 1.25rem;
 }
 
+/* hide focus outline (will be enabled on first keyboard usage) */
+body:not(.show-focus) *:focus {
+  outline: none;
+}
+
 :focus {
   outline-color: var(--color-secondary);
+  outline-width: 0.25rem;
+  outline-style: dashed;
+  outline-offset: 0.5rem;
 }
 
 button {
@@ -29,7 +37,8 @@ svg {
 }
 
 /* anchors */
-a:hover {
+a:hover,
+a:focus {
   color: var(--color-secondary);
 }
 

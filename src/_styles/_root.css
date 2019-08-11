@@ -29,6 +29,9 @@
   --layout-main-logo-font-size-sm: 3.5rem;
   --layout-main-icon-size: 2.5rem;
   --layout-navbar-height: 5rem;
+  --layout-content-max-width: 63rem;
+  --layout-content-default-gutter: 1.5rem;
   /* drop shadows */
   --shadow-navbar-active: 0px -9px 20px 15px #eeeeee;
+  --shadow-card-hover: 6px 9px 20px 0px #eeeeee;
 }

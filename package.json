@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run serve & npm run start:dev:watch",
-    "start:dev:watch": "npx chokidar \"./src/**/*\" --ignore \"./src/_layouts/*.njk\" --command \"npm run build\" --verbose --initial=true",
+    "start:dev:watch": "npx chokidar \"./src/**/*\" --ignore \"./src/_layouts/page-*.njk\" --command \"npm run build\" --verbose --initial=true",
     "build": "npm run build:clean && npm run build:webpack:prod && npm run build:cp-templates && npm run build:11ty",
     "build:clean": "rimraf ./dist",
     "build:webpack:prod": "cross-env NODE_ENV=prod webpack --config ./webpack.config.js --mode=production",

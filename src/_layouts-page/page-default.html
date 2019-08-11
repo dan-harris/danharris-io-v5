@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <!-- head -->
+  {% include '_header.html' %}
+
+  <!-- body -->
+  <body>
+    <!-- navbar -->
+    {% include '_nav.html' %}
+
+    <!-- page content -->
+    <main class="outer-wrapper">
+      <section class="content__outer-wrapper">
+        <div class="content__inner-wrapper">
+          {{ content | safe }}
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <!-- footer -->
+  {% include '_footer.html' %}
+</html>

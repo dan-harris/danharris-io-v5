@@ -1,5 +1,7 @@
 .navbar {
   display: flex;
+  align-items: center;
+  justify-content: center;
   height: var(--layout-navbar-height);
   position: fixed;
   width: 100%;
@@ -9,6 +11,13 @@
 /* shadow displayed below navbar (when not at top of page) */
 .navbar--shadow {
   box-shadow: var(--shadow-navbar-active);
+}
+
+.navbar__inner-wrapper {
+  display: flex;
+  max-width: var(--layout-content-max-width);
+  padding: 0 var(--layout-content-default-gutter);
+  width: 100%;
 }
 
 /* left-hand main nav links */
@@ -22,6 +31,10 @@
 /* container elements for links */
 .navbar .navbar__main-nav__link__outer {
   padding: 1.7rem 1.25rem 2.3rem;
+}
+/* no padding on left of first nav button is needed */
+.navbar .navbar__main-nav__link__outer:first-of-type {
+  padding-left: 0;
 }
 
 /* main nav link buttons */
@@ -37,7 +50,8 @@
 }
 
 .navbar a.navbar__main-nav__link.active,
-.navbar a.navbar__main-nav__link:hover {
+.navbar a.navbar__main-nav__link:hover,
+.navbar a.navbar__main-nav__link:focus {
   text-decoration: none;
   color: inherit;
   border-bottom: 0.25rem solid var(--color-secondary);

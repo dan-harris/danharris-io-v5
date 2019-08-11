@@ -1,0 +1,21 @@
+{% macro create( linkUrl, imageUrl, title, publishDate, displayTags = [] ) %}
+    <article class="card content__inner--tile">
+        <a href="{{ linkUrl }}">
+            <div
+                class="card__image"
+                style="background-image: url({{ imageUrl }});"
+                role="img"
+                aria-label="{{ title }}"
+            ></div>
+            <h3 class="card__title">{{ title }}</h3>
+            <span class="card__meta">{{ publishDate | date }}</span>
+            <ul class="card__meta">
+                {% for tag in displayTags %} 
+                    {% if tag != 'post' %}
+                    <li>{{ tag | trim }}</li>
+                    {% endif %} 
+                {% endfor %}
+            </ul>
+        </a>
+    </article>
+{% endmacro %}

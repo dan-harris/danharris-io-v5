@@ -1,5 +1,6 @@
 import { lazyLoadFuraCodeFont } from "./utils/lazy-load-fura-code-font";
 import { lazyLoadStyle } from "./utils/lazy-load-styles";
+import { setFocusTab } from "./utils/set-focus-tab";
 
 // async function contentLoaded() {
 //   const backgroundImageFadeInModule = await import("background-image-fade-in");
@@ -16,7 +17,7 @@ import { lazyLoadStyle } from "./utils/lazy-load-styles";
  */
 async function init() {
   // do sync inits
-  // ...
+  setFocusTab();
   // do lazy inits
   await lazyInit();
 }

@@ -1,17 +1,29 @@
 /* main content wrappers */
 main.outer-wrapper,
-.content__outer-wrapper,
-.content__inner-wrapper {
+.content__outer-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+/* set default grid for content */
 .content__inner-wrapper {
   margin-top: var(--layout-navbar-height);
-  max-width: 60rem;
+  max-width: var(--layout-content-max-width);
+  padding: 5rem var(--layout-content-default-gutter);
   align-items: unset;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1.5rem;
+}
+
+.content__inner--full-width {
+  grid-column: span 12;
+}
+
+.content__inner--tile {
+  grid-column: span 6;
 }
 
 /* quick hack to put fira code as the prism display font */
