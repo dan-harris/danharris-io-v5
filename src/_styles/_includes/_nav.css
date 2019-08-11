@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  height: var(--layout-navbar-height);
+  position: fixed;
+  width: 100%;
+  background-color: var(--color-primary-bg);
+  z-index: +1;
+}
+/* shadow displayed below navbar (when not at top of page) */
+.navbar--shadow {
+  box-shadow: var(--shadow-navbar-active);
+}
+
+/* left-hand main nav links */
+.navbar .navbar__main-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* container elements for links */
+.navbar .navbar__main-nav__link__outer {
+  padding: 1.7rem 1.25rem 2.3rem;
+}
+
+/* main nav link buttons */
+.navbar a.navbar__main-nav__link {
+  display: inherit;
+  font-size: 2rem;
+  font-weight: 500;
+  text-decoration: none;
+  /* text underline border magic */
+  display: inline-block;
+  line-height: 0.85;
+  text-shadow: 2px 2px white, 2px -2px white, -2px 2px white, -2px -2px white;
+}
+
+.navbar a.navbar__main-nav__link.active,
+.navbar a.navbar__main-nav__link:hover {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 0.25rem solid var(--color-secondary);
+}

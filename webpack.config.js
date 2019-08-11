@@ -25,7 +25,7 @@ const isDev = process.env.NODE_ENV !== "prod";
 module.exports = {
   // entry files
   entry: {
-    ["portfolio"]: "./src/scripts/portfolio.js"
+    ["portfolio"]: "./src/_scripts/portfolio.js"
   },
   output: {
     path: path.resolve(__dirname, "./dist")
@@ -82,7 +82,7 @@ module.exports = {
               plugins: [
                 postcssAutoPrefixer,
                 postcssCustomProperties({
-                  importFrom: "./src/styles/_root.css",
+                  importFrom: "./src/_styles/_root.css",
                   preserve: false
                 })
               ]
@@ -134,7 +134,7 @@ module.exports = {
     // html setup (minify for prod)
     new HtmlWebpackPlugin({
       template: "./src/_layouts-base/portfolio.html",
-      filename: "portfolio.liquid",
+      filename: "portfolio.njk",
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,
@@ -145,7 +145,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/_layouts-base/blog.html",
-      filename: "blog.liquid",
+      filename: "blog.njk",
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,
@@ -179,6 +179,6 @@ module.exports = {
       inline: ["portfolio.js"]
     }),
     // copy assets to dist
-    new CopyWebpackPlugin([{ from: "./src/assets", to: "./" }])
+    new CopyWebpackPlugin([{ from: "./src/_assets", to: "./" }])
   ]
 };

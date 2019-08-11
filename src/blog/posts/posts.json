@@ -1,0 +1,5 @@
+{
+  "layout": "blog",
+  "base_route": "blog",
+  "permalink": "/blog/{{ slug }}/index.html"
+}

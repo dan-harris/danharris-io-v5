@@ -1,0 +1,20 @@
+/* main content wrappers */
+main.outer-wrapper,
+.content__outer-wrapper,
+.content__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content__inner-wrapper {
+  margin-top: var(--layout-navbar-height);
+  max-width: 60rem;
+  align-items: unset;
+}
+
+/* quick hack to put fira code as the prism display font */
+pre.prism-code.builtin-prism-theme {
+  font-family: "FuraCode Nerd Font Mono", monospace;
+}

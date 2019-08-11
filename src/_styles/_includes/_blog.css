@@ -1,0 +1,35 @@
+.blog-post {
+  padding-top: 5rem;
+}
+
+/* header */
+.blog-post__header__image {
+  background-position: center;
+  background-size: cover;
+  height: 28rem;
+  width: 100%;
+  border: 0.35rem solid var(--color-primary-on-bg);
+}
+
+.blog-post__header__title {
+  margin-top: 1em;
+}
+
+.blog-post__header__meta {
+  font-family: "Fira Mono", monospace;
+  color: var(--color-secondary);
+  font-weight: 700;
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.blog-post__header__meta li {
+  list-style: none;
+}
+
+.blog-post__header__meta li:not(:first-of-type)::before {
+  content: "●";
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}

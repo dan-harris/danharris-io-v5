@@ -1,9 +1,9 @@
 /* 
  * logo + text main header
  */
- 
+
 .logo-header {
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@
 
 .logo__profile-pic {
   height: var(--layout-main-logo-size);
-    width: var(--layout-main-logo-size);
+  width: var(--layout-main-logo-size);
 }
 
 /* responsive resize for < browser */
@@ -44,6 +44,8 @@
 .profile-links__icon-button {
   display: block;
   color: var(--color-primary-on-bg);
+  height: var(--layout-main-icon-size);
+  width: var(--layout-main-icon-size);
 }
 
 .profile-links__icon-button:not(:last-of-type) {

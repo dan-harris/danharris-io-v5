@@ -10,6 +10,7 @@
   --color-primary-on-bg-hover: #865cd6;
   --color-on-primary: #000;
   --color-on-primary-border: #fff;
+  --color-emphasis-bg: #f4f4f4;
   /* breakpoints */
   --media-xs: 320px;
   --media-sm: 576px;
@@ -26,4 +27,8 @@
   --layout-main-logo-font-size: 6rem;
   --layout-main-logo-font-size-md: 4rem;
   --layout-main-logo-font-size-sm: 3.5rem;
+  --layout-main-icon-size: 2.5rem;
+  --layout-navbar-height: 5rem;
+  /* drop shadows */
+  --shadow-navbar-active: 0px -9px 20px 15px #eeeeee;
 }
