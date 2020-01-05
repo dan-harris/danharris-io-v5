@@ -7,10 +7,25 @@
       <li class="navbar__main-nav__link__outer">
         <a class="navbar__main-nav__link {{"active" if (base_route == "blog")}}" href="/blog">blog</a>
       </li>
-      <!-- <li class="navbar__main-nav__link__outer">
-        <a class="navbar__main-nav__link{{"active" if (base_route == "presentations")}}" href="/presentations">presentations</a>
-      </li> -->
+      <li class="navbar__main-nav__link__outer">
+        <a class="navbar__main-nav__link{{"active" if (base_route == "presentations")}}" href="/presentations">slides</a>
+      </li>
     </ul>
+    <div class="navbar__logo">
+      {# <img
+        class="navbar__logo__profile-pic"
+        alt="dan profile"
+        src="/dan-harris-profile.jpg"
+      /> #}
+      <a class="navbar__logo__profile-pic" href="/" aria-label="home">
+        <div 
+          class="img--lazy-load"
+          role="img"
+          aria-label="dan profile"
+          data-src="/dan-harris-profile.jpg"
+        ></div>
+      </a>
+    </div>
   </div>
 </nav>
    

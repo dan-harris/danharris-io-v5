@@ -1,16 +1,8 @@
+import { setHomepageTransition } from "./set-homepage-transition";
+import { initBackgroundImageFadeIn } from "./utils/init-background-image-fade-in";
 import { lazyLoadFuraCodeFont } from "./utils/lazy-load-fura-code-font";
 import { lazyLoadStyle } from "./utils/lazy-load-styles";
 import { setFocusTab } from "./utils/set-focus-tab";
-
-// async function contentLoaded() {
-//   const backgroundImageFadeInModule = await import("background-image-fade-in");
-//   backgroundImageFadeInModule.default(
-//     ".lazy-load-bg-img",
-//     600,
-//     "background-size: auto; background-position: center center;",
-//     "position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"
-//   );
-// }
 
 /**
  * global bootstrap
@@ -18,6 +10,8 @@ import { setFocusTab } from "./utils/set-focus-tab";
 async function init() {
   // do sync inits
   setFocusTab();
+  await setHomepageTransition();
+
   // do lazy inits
   await lazyInit();
 }
@@ -26,6 +20,9 @@ async function init() {
  * global bootstrap for all async inits
  */
 async function lazyInit() {
+  // async inits
+  await initBackgroundImageFadeIn();
+  // lazy styles/fonts
   await lazyLoadStyle(
     "https://fonts.googleapis.com/css?family=Fira+Mono:500,700&display=swap"
   );

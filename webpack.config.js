@@ -28,7 +28,8 @@ module.exports = {
     ["portfolio"]: "./src/_scripts/portfolio.js"
   },
   output: {
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, "./dist"),
+    chunkFilename: "lazy.[hash]-[id].js"
   },
   devtool: isDev && "source-map",
   devServer: {
