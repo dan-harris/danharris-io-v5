@@ -37,7 +37,23 @@
   width: 100%;
   background-position: center;
   background-size: cover;
+  position: relative;
+}
+
+.card__image__image {
+  z-index: +1 !important; /* silly override for image fadein */
+}
+
+.card__image__image:before {
   border: 0.25rem solid currentColor;
+}
+
+.card__image__placeholder {
+  background-color: var(--color-placeholder-bg);
+  border-style: dashed;
+  color: var(--color-placeholder-highlight);
+  height: 100%;
+  width: 100%;
 }
 
 /* card heading */

@@ -11,6 +11,8 @@
   --color-on-primary: #000;
   --color-on-primary-border: #fff;
   --color-emphasis-bg: #f4f4f4;
+  --color-placeholder-highlight: #e3e3e3;
+  --color-placeholder-bg: #fafafa;
   /* breakpoints */
   --media-xs: 320px;
   --media-sm: 576px;

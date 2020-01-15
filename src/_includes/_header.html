@@ -7,9 +7,17 @@
   />
   <meta
     name="Description"
-    content="danharris.io // portfolio site for Dan Harris // full-stack dev 🤓, grad advocate 👩‍🎓, beer enthusiast 🍺"
+    content="{{ description if description else "portfolio site for Dan Harris // frontend engineer 🤓, creator of things 🤷‍♀️, beer enthusiast 🍺" }}"
   />
   <meta name="theme-color" content="#000000" />
+  <meta property="og:title" content="{{ title if title else "danharris.io" }}">
+  <meta property="og:description" content="{{ description if description else "portfolio site for Dan Harris // frontend engineer 🤓, creator of things 🤷‍♀️, beer enthusiast 🍺" }}">
+  <meta property="og:image" content="https://danharris.io/{{ base_route if (base_route) and (base_route != 'home') }}{{ "-images/" if (base_route) and (base_route != 'home') }}{{ slug if slug else "dan-harris-social" }}.png">
+  <meta property="og:url" content="https://danharris.io/{{ base_route if (base_route) and (base_route != 'home') }}{{ "/" if (base_route) and (base_route != 'home') }}{{ slug if slug }}{{ "/" if slug }}index.htm">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="danharris.io" />
+  <meta name="twitter:image:alt" content="{{ title if title else "Dan Harris Face" }}" />
+  <meta name="twitter:site" content="@danharris_io" />
   <link rel="manifest" href="/manifest.json" />
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
   <title>{{ title if title }}{{ " // " if title }}danharris.io</title>

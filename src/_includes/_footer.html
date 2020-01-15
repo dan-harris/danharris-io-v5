@@ -1,3 +1,25 @@
-<footer>
-  <span>{{ pkg.version }}</span>
+<footer class="footer">
+  <div class="footer__inner-wrapper">
+    <div class="footer__details">
+      <h4>dan harris <span class="footer__details__version"> v{{ pkg.version }}</span></h4>
+    </div>
+    <div class="footer__profile-links">
+      <a aria-label="github link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+        href="https://github.com/dan-harris" target="_blank">
+        {% include 'icons/_github.html' %}
+      </a>
+      <a aria-label="twitter link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+        href="https://twitter.com/danharris_io" target="_blank">
+        {% include 'icons/_twitter.html' %}
+      </a>
+      <a aria-label="linkedin link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+        href="https://linkedin.com/in/dan-harris" target="_blank">
+        {% include 'icons/_linkedin.html' %}
+      </a>
+      <a aria-label="medium link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+        href="https://medium.com/@danharris_io" target="_blank">
+        {% include "icons/_medium.html" %}
+      </a>
+    </div>
+  </div>
 </footer>

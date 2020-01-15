@@ -6,7 +6,7 @@
   position: fixed;
   width: 100%;
   background-color: var(--color-primary-bg);
-  z-index: +1;
+  z-index: +10;
 }
 /* shadow displayed below navbar (when not at top of page) */
 .navbar--shadow {
@@ -83,6 +83,7 @@
 /* add extra thickness to outline */
 .navbar .navbar__logo__twitter-link > svg {
   stroke: currentColor;
+  stroke-width: 0.6px;
 }
 
 .navbar a.navbar__logo__profile-pic {
