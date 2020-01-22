@@ -101,11 +101,27 @@
 
 /* mobile nav */
 .navbar__main-nav__mobile-menu {
-  position: absolute;
-  top: var(--layout-navbar-hamburger-offset-top);
   z-index: 1;
-  -webkit-user-select: none;
-  user-select: none;
+}
+
+@media (max-width: 768px) {
+  /* show as hamburger menu on smaller res */
+  .navbar__main-nav__mobile-menu {
+    position: absolute;
+    top: var(--layout-navbar-hamburger-offset-top);
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* hide all mobile menu hamburger stuff on desktop */
+/* NOTE: one of the few media queries that operates in the opposite way (> then size) */
+@media (min-width: 769px) {
+  input.navbar__main-nav__mobile-menu__toggle,
+  input.navbar__main-nav__mobile-menu__toggle ~ label,
+  input.navbar__main-nav__mobile-menu__toggle ~ span {
+    display: none;
+  }
 }
 
 /* shimmy the checkbox input over our hamburger menu
@@ -125,6 +141,23 @@ input.navbar__main-nav__mobile-menu__toggle {
   z-index: 2; /* and place it over the hamburger */
 
   -webkit-touch-callout: none;
+}
+
+input.navbar__main-nav__mobile-menu__toggle ~ label {
+  display: block;
+  position: absolute;
+  display: block;
+  position: absolute;
+  width: 2.25rem;
+  height: 1.75rem;
+  top: -2px;
+  left: -1px;
+  transition: height 0.5s ease-out, width 0.5s ease-out;
+}
+
+input.navbar__main-nav__mobile-menu__toggle:checked ~ label {
+  height: 1.5rem;
+  width: 1.5rem;
 }
 
 /* animate hamburger when open menu */

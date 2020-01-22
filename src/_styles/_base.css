@@ -12,11 +12,20 @@ body {
 }
 
 /* hide focus outline (will be enabled on first keyboard usage) */
-body:not(.show-focus) *:focus {
+body:not(.show-focus) *:focus,
+body:not(.show-focus) input[type="checkbox"]:focus ~ label {
   outline: none;
 }
 
 :focus {
+  outline-color: var(--color-secondary);
+  outline-width: 0.25rem;
+  outline-style: dashed;
+  outline-offset: 0.5rem;
+}
+
+/* need to keep focus for custom input elements */
+input[type="checkbox"]:focus ~ label {
   outline-color: var(--color-secondary);
   outline-width: 0.25rem;
   outline-style: dashed;
