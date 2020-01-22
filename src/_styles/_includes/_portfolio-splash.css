@@ -28,23 +28,6 @@
   z-index: +1 !important;
 }
 
-/* responsive resize for < browser */
-@media (max-width: 768px) {
-  .logo__profile-pic,
-  .logo__profile-pic__preview {
-    height: var(--layout-main-logo-size-md);
-    width: var(--layout-main-logo-width-md);
-  }
-}
-/* responsive resize for mobile */
-@media (max-width: 576px) {
-  .logo__profile-pic,
-  .logo__profile-pic__preview {
-    height: var(--layout-main-logo-size-sm);
-    width: var(--layout-main-logo-width-sm);
-  }
-}
-
 /* profile links */
 .profile-links {
   display: flex;

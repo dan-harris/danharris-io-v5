@@ -18,12 +18,32 @@ main.outer-wrapper,
   grid-gap: 1.5rem;
 }
 
+@media (max-width: 576px) {
+  .content__inner-wrapper {
+    padding: 3rem 0.5rem;
+  }
+}
+
 .content__inner--full-width {
   grid-column: span 12;
 }
 
+@media (max-width: 576px) {
+  /* full-width views need some extra padding for smaller res */
+  .content__inner--full-width {
+    padding: 0.5rem;
+  }
+}
+
 .content__inner--tile {
   grid-column: span 6;
+}
+
+@media (max-width: 576px) {
+  /* make content tiles take up entire window on mobile-ish sizes */
+  .content__inner--tile {
+    grid-column: span 12;
+  }
 }
 
 /* quick hack to put fira code as the prism display font */
