@@ -1,6 +1,6 @@
 import { setHomepageTransition } from "./set-homepage-transition";
 import { initBackgroundImageFadeIn } from "./utils/init-background-image-fade-in";
-import { lazyLoadFuraCodeFont } from "./utils/lazy-load-fura-code-font";
+import { lazyLoadCodeBlockFont } from "./utils/lazy-load-code-block-font";
 import { lazyLoadStyle } from "./utils/lazy-load-styles";
 import { setFocusTab } from "./utils/set-focus-tab";
 
@@ -26,7 +26,7 @@ async function lazyInit() {
   await lazyLoadStyle(
     "https://fonts.googleapis.com/css?family=Fira+Mono:500,700&display=swap"
   );
-  await lazyLoadFuraCodeFont();
+  await lazyLoadCodeBlockFont();
 }
 
 document.addEventListener("DOMContentLoaded", init);

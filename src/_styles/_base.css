@@ -120,9 +120,3 @@ hr::after {
   display: block;
   box-sizing: border-box;
 }
-
-code {
-  font-family: "FuraCode Nerd Font Mono", "Fira Mono", monospace;
-  padding: 0 0.25em;
-  background-color: var(--color-emphasis-bg);
-}

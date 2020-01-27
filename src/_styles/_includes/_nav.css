@@ -118,6 +118,7 @@
 /* NOTE: one of the few media queries that operates in the opposite way (> then size) */
 @media (min-width: 769px) {
   input.navbar__main-nav__mobile-menu__toggle,
+  .navbar__main-nav__mobile-menu--shadow,
   input.navbar__main-nav__mobile-menu__toggle ~ label,
   input.navbar__main-nav__mobile-menu__toggle ~ span {
     display: none;

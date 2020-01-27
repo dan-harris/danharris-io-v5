@@ -13,6 +13,12 @@
   --color-emphasis-bg: #f4f4f4;
   --color-placeholder-highlight: #e3e3e3;
   --color-placeholder-bg: #fafafa;
+  /* code block colors */
+  --color-code-block-bg: #f4f4f4;
+  --color-code-block-selection-bg: #ddd6ee;
+  --color-code-block-default: #000;
+  --color-code-block-comment: #9c9c9c;
+  --color-code-block-keyword: #865cd6;
   /* breakpoints */
   --media-xs: 320px;
   --media-sm: 576px;

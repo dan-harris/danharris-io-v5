@@ -12,6 +12,15 @@ module.exports = function(eleventyConfig) {
     return parsedDate.toDateString();
   });
 
+  // markdown parser
+  const markdownIt = require("markdown-it");
+  const markdownItPrism = require("markdown-it-prism");
+  const options = {
+    html: true
+  };
+  let markdownLib = markdownIt(options).use(markdownItPrism);
+  eleventyConfig.setLibrary("md", markdownLib);
+
   // config object
   return {
     dir: {

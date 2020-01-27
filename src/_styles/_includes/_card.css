@@ -1,6 +1,7 @@
 /* card layout */
 .card {
   transform: translateY(0);
+  /* box-shadow: 4px 6px 20px 0 #f7f7f7; */
 }
 
 .card:hover,
