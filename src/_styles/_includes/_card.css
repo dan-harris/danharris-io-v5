@@ -60,6 +60,7 @@
 /* card heading */
 .card__title {
   margin-top: 0.6em;
+  min-height: 8.25rem;
 }
 
 .card__meta {

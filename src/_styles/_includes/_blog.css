@@ -45,3 +45,10 @@
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+
+/* post embedded images */
+.blog-post img {
+  margin: 5%;
+  width: 90%;
+  border: 0.35rem solid var(--color-primary-on-bg);
+}

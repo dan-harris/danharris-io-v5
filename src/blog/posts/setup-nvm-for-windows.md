@@ -4,7 +4,7 @@ published: true
 description: Never be off by a node version again 😲…. setup node version manager for Windows.
 tags: ["post", "nvm", "windows", "node", "beginners"]
 slug: setup-nvm-for-windows
-date: 2016-01-01
+date: 2019-03-12
 ---
 
 One of the great things about where I work is our commitment to giving juniors a go (for our sister social enterprise, [Head Full of Heart](https://twitter.com/teamHFoH), its actually the core mission 👍).
@@ -14,7 +14,7 @@ Well... have no fear 😱, that's where this _short_ article comes in.
 
 _\* Just a reminder, this article shows the setup in windows... but setup in Mac or Linux is pretty similar 👍._
 
-### why bother managing node versions?
+### why bother managing node versions
 
 Well I'm glad you asked! When working on a project (especially within a team), its ideal to have as similar an environment as possible to both your peers, but more importantly, your build server.
 Strange issues 👻 can arise when using mismatched versions of node (and by extension npm)... e.g. dependencies failing to build, hard to debug runtime errors .etc.
@@ -43,7 +43,7 @@ Setting our node version is now as simple as installing the right version using 
 
 _\* I'd run the above commands - or at least the install command - using an elevated commandline, sometime odd things happen 🤷‍♂️._
 
-### well that wasn't hard?
+### well that wasn't hard
 
 Hopefully the above was pretty easy... but sometimes odd things occur. Let me know in the comments if you get a strange error or some other heeby-jeeby.
 

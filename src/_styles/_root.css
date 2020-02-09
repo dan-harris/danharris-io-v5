@@ -44,5 +44,5 @@
   --shadow-navbar-active: 0px -9px 20px 15px #eeeeee;
   --shadow-card-hover: 6px 9px 20px 0px #eeeeee;
   /* misc */
-  --navbar-item-count: 3; /* number of navbar items - makes calcs easier */
+  --navbar-item-count: 2; /* number of navbar items - makes calcs easier */
 }
