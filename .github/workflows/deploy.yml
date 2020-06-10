@@ -16,8 +16,11 @@ jobs:
       with:
         node-version: '12.x'
 
-    - run: npm ci
-    - run: npm run build --if-present
+    - name: Install NPM deps
+      run: npm ci
+      
+    - name: Build
+      run: npm run build --if-present
       
     - name: Deploy S3
       uses: jakejarvis/s3-sync-action@master
@@ -29,3 +32,12 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'ap-southeast-2'
         SOURCE_DIR: 'dist'
+
+    - name: Invalidate Cloudfront
+      uses: awact/cloudfront-action@master
+      env:
+        SOURCE_PATH: './public'
+        AWS_REGION: 'us-east-1'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
