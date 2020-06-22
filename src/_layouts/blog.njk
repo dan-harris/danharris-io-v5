@@ -1,6 +1,7 @@
 ---
 layout: page-default
 ---
+{% import "_author.njk" as authorInclude %}
 
 <article class="blog-post content__inner--full-width">
     <!-- header title + image .etc -->
@@ -14,11 +15,16 @@ layout: page-default
         <ul class="blog-post__header__meta">
             <li>{{ page.date | date }}</li>
             {% for tag in tags %}
-            {% if tag != 'post' %}
-            <li>{{ tag | trim }}</li>
-            {% endif %}
+                {% if tag != 'post' %}
+                    <li>{{ tag | trim }}</li>
+                {% endif %}
             {% endfor %}
         </ul>
     </header>
     {{ content | safe }}
+    <section class="blog-post__authors">
+        {% for author in authors %}
+            {{ authorInclude.sigBlock(author, authorsdata)}}
+        {% endfor %}
+    </section>
 </article>

@@ -12,6 +12,11 @@ module.exports = function(eleventyConfig) {
     return parsedDate.toDateString();
   });
 
+  // dump dump
+  eleventyConfig.addFilter("logDump", function(data) {
+    console.log(data);
+  });
+
   // markdown parser
   const markdownIt = require("markdown-it");
   const markdownItPrism = require("markdown-it-prism");
@@ -26,6 +31,7 @@ module.exports = function(eleventyConfig) {
     dir: {
       input: "./src",
       output: "./dist",
+      data: "./_data",
       includes: "./_includes",
       layouts: "./_layouts"
     }

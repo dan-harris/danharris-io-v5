@@ -11,6 +11,7 @@
 /* element styles */
 @import "./_includes/_blog-list.css";
 @import "./_includes/_blog.css";
+@import "./_includes/_author.css";
 @import "./_includes/_card.css";
 @import "./_includes/_footer.css";
 @import "./_includes/_nav.css";
