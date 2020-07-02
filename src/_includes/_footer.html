@@ -4,22 +4,40 @@
       <h4>dan harris <span class="footer__details__version"> v{{ pkg.version }}</span></h4>
     </div>
     <div class="footer__profile-links">
-      <a aria-label="github link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
-        href="https://github.com/dan-harris" target="_blank">
+      <a aria-label="github link" rel="noopener" class="profile-links__icon-button external-icon--exempt"
+        href="https://github.com/dan-harris"
+        target="_blank">
         {% include 'icons/_github.html' %}
       </a>
-      <a aria-label="twitter link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+      <a aria-label="twitter link" rel="noopener" class="profile-links__icon-button external-icon--exempt"
         href="https://twitter.com/danharris_io" target="_blank">
         {% include 'icons/_twitter.html' %}
       </a>
-      <a aria-label="linkedin link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+      <a aria-label="linkedin link" rel="noopener" class="profile-links__icon-button external-icon--exempt"
         href="https://linkedin.com/in/dan-harris" target="_blank">
         {% include 'icons/_linkedin.html' %}
       </a>
-      <a aria-label="medium link" rel="noopener" class="footer__profile-links__icon-button external-icon--exempt"
+      <a aria-label="medium link" rel="noopener" class="profile-links__icon-button external-icon--exempt"
         href="https://medium.com/@danharris_io" target="_blank">
-        {% include "icons/_medium.html" %}
+        {% include 'icons/_medium.html' %}
       </a>
+    </div>
+    <div class="footer__profile-legal">
+      <p>
+        Made with ☕️, from adelaide.
+      </p>
+      <br/>
+      <p>
+        Icons made by 
+        {% for iconAuthor in attributiondata.flaticon.authors | list %}
+          <a aria-label="freepik" href="{{ iconAuthor.link }}" rel="noopener" target="_blank">{{ iconAuthor.name }}</a> ,
+        {% endfor %}
+        from <a aria-label="freepik" href="{{ attributiondata.flaticon.link }}" rel="noopener" target="_blank">freepik.com</a>
+      </p>
+      <br/>
+      <p>
+        © 2020
+      </p>
     </div>
   </div>
 </footer>
