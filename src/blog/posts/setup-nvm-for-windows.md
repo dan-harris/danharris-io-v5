@@ -2,12 +2,12 @@
 title: Setting up your Node environment using nvm for windows
 published: true
 description: Never be off by a node version again 😲…. setup node version manager for Windows.
-tags: ["post", "nvm", "windows", "node", "beginners"]
+tags: ['post', 'nvm', 'windows', 'node', 'beginners']
 slug: setup-nvm-for-windows
 date: 2019-03-12
 ---
 
-One of the great things about where I work is our commitment to giving juniors a go (for our sister social enterprise, [Head Full of Heart](https://twitter.com/teamHFoH), its actually the core mission 👍).
+One of the great things about being involved with [Head Full of Heart](https://twitter.com/teamHFoH), is the commitment to giving juniors a go.
 As most of our code repo's incorporate some kind of node build or run, a question that is commonly asked is how to setup your environment to actually run node.
 
 Well... have no fear 😱, that's where this _short_ article comes in.
