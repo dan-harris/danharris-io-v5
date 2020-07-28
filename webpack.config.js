@@ -1,23 +1,23 @@
-const path = require("path");
+const path = require('path');
 /**
  * webpack & plugins
  */
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
-const StyleExtHtmlWebpackPlugin = require("style-ext-html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 /**
  * postcss plugins
  */
-const postcssAutoPrefixer = require("autoprefixer");
-const postcssCustomProperties = require("postcss-custom-properties");
+const postcssAutoPrefixer = require('autoprefixer');
+const postcssCustomProperties = require('postcss-custom-properties');
 
 /**
  * set development mode
  */
-const isDev = process.env.NODE_ENV !== "prod";
+const isDev = process.env.NODE_ENV !== 'prod';
 
 /**
  * webpack config
@@ -25,16 +25,17 @@ const isDev = process.env.NODE_ENV !== "prod";
 module.exports = {
   // entry files
   entry: {
-    ["portfolio"]: "./src/scripts/portfolio.js"
+    ['portfolio']: './src/_scripts/portfolio.js',
   },
   output: {
-    path: path.resolve(__dirname, "./dist")
+    path: path.resolve(__dirname, './dist'),
+    chunkFilename: 'lazy.[hash]-[id].js',
   },
-  devtool: isDev && "source-map",
+  devtool: isDev && 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, "./dist"),
+    contentBase: path.join(__dirname, './dist'),
     port: 7134,
-    open: true
+    open: true,
   },
   module: {
     rules: [
@@ -43,65 +44,65 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"],
+            presets: ['@babel/preset-env'],
             plugins: [
-              "@babel/plugin-transform-runtime",
-              "@babel/plugin-syntax-dynamic-import",
-              "@babel/plugin-transform-async-to-generator",
-              "@babel/plugin-transform-regenerator"
-            ]
-          }
-        }
+              '@babel/plugin-transform-runtime',
+              '@babel/plugin-syntax-dynamic-import',
+              '@babel/plugin-transform-async-to-generator',
+              '@babel/plugin-transform-regenerator',
+            ],
+          },
+        },
       },
       // css
       {
         test: /\.css$/,
         use: [
           // default to standard style loader
-          !isDev ? MiniCssExtractPlugin.loader : "style-loader",
+          !isDev ? MiniCssExtractPlugin.loader : 'style-loader',
           // standard css loader
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: isDev,
               minimize: !isDev,
-              importLoaders: 1
-            }
+              importLoaders: 1,
+            },
           },
           // postcss loader (autoprefix + embed custom properties)
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
-              ident: "postcss",
+              ident: 'postcss',
               autoprefixer: {
-                browsers: ["last 2 versions"]
+                browsers: ['last 2 versions'],
               },
               sourceMap: isDev,
               plugins: [
                 postcssAutoPrefixer,
                 postcssCustomProperties({
-                  importFrom: "./src/styles/_root.css",
-                  preserve: false
-                })
-              ]
-            }
-          }
-        ]
+                  importFrom: './src/_styles/_root.css',
+                  preserve: false,
+                }),
+              ],
+            },
+          },
+        ],
       },
       // images & files
       {
         test: /\.(jpg|png|gif|svg)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[name].[ext]",
-              outputPath: "static/",
-              useRelativePath: true
-            }
-          }
+              name: '[name].[ext]',
+              outputPath: 'static/',
+              useRelativePath: true,
+            },
+          },
           // {
           //   loader: "image-webpack-loader",
           //   options: {
@@ -124,41 +125,41 @@ module.exports = {
           //     }
           //   }
           // }
-        ]
-      }
-    ]
+        ],
+      },
+    ],
   },
   plugins: [
     // for older webpack extensions interop
     new webpack.LoaderOptionsPlugin({}),
     // html setup (minify for prod)
     new HtmlWebpackPlugin({
-      template: "./src/_layouts-base/portfolio.html",
-      filename: "portfolio.liquid",
+      template: './src/_layouts-page/page-default.html',
+      filename: 'page-default.njk',
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,
         caseSensitive: true,
         removeComments: true,
-        removeEmptyElements: false
-      }
+        removeEmptyElements: false,
+      },
     }),
     new HtmlWebpackPlugin({
-      template: "./src/_layouts-base/blog.html",
-      filename: "blog.liquid",
+      template: './src/_layouts-page/page-portfolio.html',
+      filename: 'page-portfolio.njk',
       minify: !isDev && {
         html5: true,
         collapseWhitespace: true,
         caseSensitive: true,
         removeComments: true,
-        removeEmptyElements: false
-      }
+        removeEmptyElements: false,
+      },
     }),
     // copy layout templates
     // extract css
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[id].css"
+      filename: '[name].css',
+      chunkFilename: '[id].css',
     }),
     // minify & inline css
     new StyleExtHtmlWebpackPlugin({
@@ -166,19 +167,19 @@ module.exports = {
       minify: {
         level: {
           1: {
-            all: true
+            all: true,
           },
           2: {
-            all: true
-          }
-        }
-      }
+            all: true,
+          },
+        },
+      },
     }),
     // inline js
     new ScriptExtHtmlWebpackPlugin({
-      inline: ["portfolio.js"]
+      inline: ['portfolio.js'],
     }),
     // copy assets to dist
-    new CopyWebpackPlugin([{ from: "./src/assets", to: "./" }])
-  ]
+    new CopyWebpackPlugin([{ from: './src/_assets', to: './' }]),
+  ],
 };

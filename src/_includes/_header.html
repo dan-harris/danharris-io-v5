@@ -1,0 +1,29 @@
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="Description"
+    content="{{ description if description else "portfolio site for Dan Harris // frontend engineer 🤓, creator of things 🤷‍♀️, beer enthusiast 🍺" }}" />
+  <meta name="theme-color" content="#000000" />
+ <meta property="og:title" content="{{ title if title else "danharris.io" }}">
+  <meta property="og:description" content="{{ description if description else "portfolio site for Dan Harris // frontend engineer 🤓, creator of things 🤷‍♀️, beer enthusiast 🍺" }}">
+   <meta property="og:image"
+    content="https://danharris.io/{{ base_route if (base_route) and (base_route != 'home') }}{{ "-images/" if (base_route) and (base_route != 'home') }}{{ slug if slug else "dan-harris-social" }}.jpg">
+  <meta property="og:url"
+    content="https://danharris.io/{{ base_route if (base_route) and (base_route != 'home') }}{{ "/" if (base_route) and (base_route != 'home') }}{{ slug if slug }}{{ "/" if slug }}index.htm">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:site_name" content="danharris.io" />
+  <meta name="twitter:image:alt" content="{{ title if title else "Dan Harris Face" }}" />
+  <meta name="twitter:site" content="@danharris_io" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png" />
+  <title>{{ title if title }}{{ " // " if title }}danharris.io</title>
+  <!--[if lt IE 9]>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"
+    ></script>
+  <![endif]-->
+  <link rel="preload" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|Fjalla+One&display=swap"  as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans:400,500|Fjalla+One&display=swap" ></noscript>
+</head>
