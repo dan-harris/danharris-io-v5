@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "background-image-fade-in": "^0.4.4",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
